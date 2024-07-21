@@ -6,17 +6,21 @@ import Register from './pages/Register';
 import Chat from './pages/Chat';
 import ProtectedRoute from './protectedRoutes/ProtectedRoute';
 import { AuthProvider } from './context/authContext';
+import { ChatProvider } from './context/chatContext';
 function App() {
   return (
     <AuthProvider>
+      <ChatProvider>
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/chat" element={<ProtectedRoute element={<Chat />} />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<ProtectedRoute element={<Chat />} />} />
+          {/* <Route path="/" element={<Login />} /> */}
         </Routes>
       </Router>
+      </ChatProvider>
+     
     </AuthProvider>
   );
 }

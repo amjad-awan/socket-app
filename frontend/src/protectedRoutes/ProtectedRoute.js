@@ -4,9 +4,9 @@ import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/authContext';
 
 const ProtectedRoute = ({ element }) => {
-  const { isAuthenticated } = useAuth();
+  const { user } = useAuth();
 
-  return isAuthenticated ? element : <Navigate to="/login" />;
+  return user ? element : <Navigate to="/login" />;
 };
 
 export default ProtectedRoute;

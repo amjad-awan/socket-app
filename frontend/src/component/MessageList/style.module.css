@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: column;
     margin-top:80px !important;
-    padding:0px !important;
+    padding:0px 30px !important;
 }
 
 .list_item-text{
     padding:10px 20px !important;
-    border-radius:5px;
+    border-radius:100px;
 }
 .name_box{
     display: flex;
@@ -19,5 +19,15 @@
     border-radius:50%;
     font-weight:600;
     font-size:18px
+
+}
+.no_chat-selcted{
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+.chat-header{
+    border-bottom: 1px solid rgba(161, 158, 158, 0.185);
+    border-radius: unset !important;
 
 }

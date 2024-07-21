@@ -1,0 +1,39 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+   output = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id    Int     @default(autoincrement()) @id
+  email String  @unique
+  password String 
+  name  String
+}
+model Message {
+  id        Int      @id @default(autoincrement())
+  senderId   Int
+  recieverId Int
+  senderName String
+  recieverName String
+  text      String
+  timestamp DateTime @default(now())
+}
+
+model UnreadMessage {
+  id         Int   @id @default(autoincrement())
+  senderId   Int
+  recieverId Int
+  count      Int
+  @@unique([senderId, recieverId]) // Ensure this unique constraint exists
+}
+
+
+
